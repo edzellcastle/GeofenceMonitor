@@ -10,6 +10,8 @@
 		6353F3A72629E7D000162F54 /* GeofenceMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6353F39D2629E7D000162F54 /* GeofenceMonitor.framework */; };
 		6353F3AC2629E7D000162F54 /* GeofenceMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353F3AB2629E7D000162F54 /* GeofenceMonitorTests.swift */; };
 		6353F3AE2629E7D000162F54 /* GeofenceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6353F3A02629E7D000162F54 /* GeofenceMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6353F3BB2629E8BA00162F54 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6353F3B92629E8BA00162F54 /* CoreDataModel.xcdatamodeld */; };
+		6353F3BF2629FA5700162F54 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353F3BE2629FA5700162F54 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		6353F3A62629E7D000162F54 /* GeofenceMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeofenceMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6353F3AB2629E7D000162F54 /* GeofenceMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceMonitorTests.swift; sourceTree = "<group>"; };
 		6353F3AD2629E7D000162F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6353F3BA2629E8BA00162F54 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		6353F3BE2629FA5700162F54 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +75,10 @@
 		6353F39F2629E7D000162F54 /* GeofenceMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				6353F3B92629E8BA00162F54 /* CoreDataModel.xcdatamodeld */,
 				6353F3A02629E7D000162F54 /* GeofenceMonitor.h */,
 				6353F3A12629E7D000162F54 /* Info.plist */,
+				6353F3BE2629FA5700162F54 /* CoreDataManager.swift */,
 			);
 			path = GeofenceMonitor;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				TargetAttributes = {
 					6353F39C2629E7D000162F54 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					6353F3A52629E7D000162F54 = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6353F3BF2629FA5700162F54 /* CoreDataManager.swift in Sources */,
+				6353F3BB2629E8BA00162F54 /* CoreDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 		6353F3B22629E7D000162F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DK89B3CEZ5;
@@ -357,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapinfuse.GeofenceMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +376,7 @@
 		6353F3B32629E7D000162F54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DK89B3CEZ5;
@@ -389,6 +401,7 @@
 		6353F3B52629E7D000162F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DK89B3CEZ5;
 				INFOPLIST_FILE = GeofenceMonitorTests/Info.plist;
@@ -407,6 +420,7 @@
 		6353F3B62629E7D000162F54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DK89B3CEZ5;
 				INFOPLIST_FILE = GeofenceMonitorTests/Info.plist;
@@ -453,6 +467,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6353F3B92629E8BA00162F54 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6353F3BA2629E8BA00162F54 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 6353F3BA2629E8BA00162F54 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6353F3942629E7D000162F54 /* Project object */;
 }
