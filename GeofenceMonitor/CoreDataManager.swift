@@ -31,7 +31,7 @@ public class CoreDataManager {
         return container
     }()
 
-    public func postLocation(userID: String, geofenceLatitude: Double, geofenceLongitude: Double, action: String){
+    public func postLocation(userID: String, geofenceLatitude: Double, geofenceLongitude: Double, action: String) {
         
         let context = persistentContainer.viewContext
         let contact = NSEntityDescription.insertNewObject(forEntityName: "LocationAction", into: context) as! LocationAction
@@ -44,7 +44,6 @@ public class CoreDataManager {
         do {
             try context.save()
             print("Location posted succesfuly")
-            
         } catch let error {
             print("Failed to create location: \(error.localizedDescription)")
         }
@@ -56,14 +55,12 @@ public class CoreDataManager {
         
         do {
             let locationActions = try context.fetch(fetchRequest)
-            
-            for (index,locationAction) in locationActions.enumerated() {
-                print("Location Action \(index): \(locationAction.userID ?? "")")
+            for locationAction in locationActions {
+                print("Location Action: user: \(locationAction.userID ?? "") action: \(locationAction.action ?? "")")
             }
         } catch let fetchErr {
             print("Failed to fetch location actions:",fetchErr)
         }
     }
-
 }
 

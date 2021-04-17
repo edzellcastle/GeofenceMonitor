@@ -12,6 +12,7 @@
 		6353F3AE2629E7D000162F54 /* GeofenceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6353F3A02629E7D000162F54 /* GeofenceMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6353F3BB2629E8BA00162F54 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6353F3B92629E8BA00162F54 /* CoreDataModel.xcdatamodeld */; };
 		6353F3BF2629FA5700162F54 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353F3BE2629FA5700162F54 /* CoreDataManager.swift */; };
+		6353F409262A233800162F54 /* LocationPostingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353F408262A233800162F54 /* LocationPostingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		6353F3AD2629E7D000162F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6353F3BA2629E8BA00162F54 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		6353F3BE2629FA5700162F54 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6353F408262A233800162F54 /* LocationPostingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPostingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,9 @@
 			children = (
 				6353F3B92629E8BA00162F54 /* CoreDataModel.xcdatamodeld */,
 				6353F3A02629E7D000162F54 /* GeofenceMonitor.h */,
-				6353F3A12629E7D000162F54 /* Info.plist */,
 				6353F3BE2629FA5700162F54 /* CoreDataManager.swift */,
+				6353F408262A233800162F54 /* LocationPostingManager.swift */,
+				6353F3A12629E7D000162F54 /* Info.plist */,
 			);
 			path = GeofenceMonitor;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				6353F3BF2629FA5700162F54 /* CoreDataManager.swift in Sources */,
 				6353F3BB2629E8BA00162F54 /* CoreDataModel.xcdatamodeld in Sources */,
+				6353F409262A233800162F54 /* LocationPostingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
