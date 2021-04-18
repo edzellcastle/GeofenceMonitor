@@ -22,15 +22,12 @@ public class LocationPostingManager: NSObject, CLLocationManagerDelegate {
     lazy var locationManager = CLLocationManager()
     var userID = ""
     
-    public init(userID: String, geofenceLatitude: Double, geofenceLongitude: Double) {
+    public init(userID: String) {
         super.init()
         self.userID = userID
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.distanceFilter = self.distanceFilter
-        
-        let centerCoodinate = CLLocationCoordinate2DMake(geofenceLatitude, geofenceLongitude)
-        region = CLCircularRegion(center: centerCoodinate, radius: radius, identifier: identifier)
     }
     
     func startMonitoring() {
@@ -57,6 +54,14 @@ public class LocationPostingManager: NSObject, CLLocationManagerDelegate {
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .authorizedAlways , .authorizedWhenInUse:
+            if region == nil {
+                // Set the center of the region to the user's current location when the region has not been initialized.
+                let currentLocation = locationManager.location
+                if let currentLocation = currentLocation {
+                    let centerCoodinate = CLLocationCoordinate2DMake(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
+                    region = CLCircularRegion(center: centerCoodinate, radius: radius, identifier: identifier)
+                }
+            }
             startMonitoring()
         case .notDetermined , .denied , .restricted:
             break
