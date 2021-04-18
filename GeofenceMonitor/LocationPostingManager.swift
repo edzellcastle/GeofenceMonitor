@@ -13,7 +13,7 @@ enum GeofenceEvent: String {
   case exit = "exit"
 }
 
-class LocationPostingManager: NSObject, CLLocationManagerDelegate {
+public class LocationPostingManager: NSObject, CLLocationManagerDelegate {
     var region: CLCircularRegion?
     let radius: Double = 80.0   // meters
     let identifier = "region1"  // geofence identifier
@@ -22,7 +22,7 @@ class LocationPostingManager: NSObject, CLLocationManagerDelegate {
     lazy var locationManager = CLLocationManager()
     var userID = ""
     
-    init(userID: String, geofenceLatitude: Double, geofenceLongitude: Double) {
+    public init(userID: String, geofenceLatitude: Double, geofenceLongitude: Double) {
         super.init()
         self.userID = userID
         locationManager.delegate = self
@@ -42,19 +42,19 @@ class LocationPostingManager: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+    public func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
       if region is CLCircularRegion {
         handleEvent(for: region, action: GeofenceEvent.enter.rawValue)
       }
     }
 
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+    public func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
       if region is CLCircularRegion {
         handleEvent(for: region, action: GeofenceEvent.enter.rawValue)
       }
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .authorizedAlways , .authorizedWhenInUse:
             startMonitoring()
